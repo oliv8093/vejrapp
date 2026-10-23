@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boiler-plate</title>
-    <link rel="shortcut icon" href="assets/img/30x6si.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/site.css">
-    <script src="assets/js/site.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B1220">
+  <title>Vejret i Aalborg</title>
+  <link rel="stylesheet" href="./assets/css/site.css">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
 </head>
 <body>
- boilerplate 
+  <header>
+    <h1 id="title">Vejret i Aalborg</h1>
+    <p id="date"></p>
+  </header>
+
+  <main id="app">
+    <section id="content">
+      <!-- Views renderer indhold her -->
+    </section>
+  </main>
+
+  <footer>
+    <span>Data: Open-Meteo</span>
+    <span id="updated"></span>
+  </footer>
+
+  <script type="module" src="./assets/js/controller/weatherController.js"></script>
+  <script>
+    // Registrer service worker (offline + cache)
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js")
+    }
+  </script>
 </body>
 </html>
